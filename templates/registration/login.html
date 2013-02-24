@@ -1,0 +1,20 @@
+{% extends "skeleton.html" %}
+{% block content %}
+    {% if user.is_authenticated %}
+        <p> You are <b>{{user.username}}</b> and are already login. </p>
+        <p> You can <a href="/accounts/logout/">logout</a> now.</p>
+    {% else %}
+        <h2>Login</h2>
+        <p>You are not logged in yet!</p>
+        <form method="post" action="">
+        {% csrf_token %}
+        <table>
+        {{form.as_table}}
+        </table>
+        <input type="submit" value="Login">
+        <input type="hidden" name="next" value="{{next}}">
+        </form>
+        <h2>Request credentials</h2>
+        <p>Some of the contents of my web are only for registered users. Please ask me for credentials through <a href="/credentials/request/">this form.</a></p>
+    {% endif %}
+{% endblock %}

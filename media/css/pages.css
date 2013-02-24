@@ -1,0 +1,16 @@
+#home_presentation {
+    width: 60%;
+    position: static;
+    float: left;
+}
+#home_cloud {
+    width: 40%;
+    position: static;
+    float: right;
+}
+#home_slides {
+    width: 100%;
+    position: static;
+    clear: both;
+}
+

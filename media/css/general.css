@@ -1,0 +1,103 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #333;
+    font-size: 100%;
+    font-family: Sans-Serif;
+    color: white;
+}
+
+body p {
+    text-align: justify;
+}
+
+.center_block {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 800px;
+    min-width: 600px;
+    height: 100%;
+}
+
+#content{
+    padding-bottom: 2em;
+}
+
+#content a{
+    color: #ff7700;
+}
+
+#header {
+    position: fixed;
+    top: 0;
+    width: 100%; 
+    height: 2em;
+    padding: 0;
+    background-color: silver;
+    border-bottom: 1px solid gray;
+}
+
+#header_left {
+    float: left;
+    padding: 0.3em;
+}
+#header_right {
+    float: right;
+    padding: 0.3em;
+}
+
+#footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: silver;
+    border-top: 1px solid LightGray;
+}
+
+#footer_menu {
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+    text-align: center;
+
+}
+
+#footer_updated {
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+    text-align: center;
+    font-size: 70%;
+}
+
+#content {
+    margin: 0;
+    padding: 0;
+    padding-bottom: 4em;
+    position: relative;
+    top: 2em;
+}
+
+/* Errors in Forms, as from django.forms */
+ul.errorlist {
+    color: red;
+    list-style-type: none; 
+}
+
+/* Help */
+.help {
+    background-color: #ff7;
+    border: 1px solid #440;
+    padding: 0.2em;
+    position: absolute;
+    top: 30px;
+    font-size: 0.7em;
+    color: #440;
+}
+
+/* TODO mark */
+.todo {
+    background-color: #fa7;
+}

@@ -1,0 +1,75 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" >
+    <meta name="application-name" content="MyCV">
+    <meta name="author" content="Alvaro Santamaria Herrero">
+    <meta name="description" content="Creative heterodox CV">
+    <meta name="keywords" content="TODO">
+
+    <link rel="icon"><!-- TODO -->
+    <link rel="stylesheet" type="text/css" href="{{MEDIA_URL}}css/general.css">
+    <link rel="stylesheet" type="text/css" href="{{MEDIA_URL}}css/pages.css">
+    <link rel="stylesheet" type="text/css" href="{{MEDIA_URL}}css/components.css">
+    <link rel="stylesheet" type="text/css" href="{{MEDIA_URL}}css/prettify.css">
+    <script type="text/javascript" src="{{MEDIA_URL}}js/jquery.js"></script>
+    <script type="text/javascript" src="{{MEDIA_URL}}js/mycv.js"></script>
+    <script type="text/javascript" src="{{MEDIA_URL}}js/prettify/prettify.js"></script>
+
+    <title>
+        {% block title %}Alvaro Santamaria - Heterodox CV{% endblock %}
+    </title>
+
+</head>
+<body>
+<div class="center_block">
+<div id="content">
+{% block content %} 
+{% endblock %}
+<br/><br/>
+<br/><br/>
+</div>
+</div>
+<div id="header">
+{% block header %} 
+<div class="center_block">
+    <div id="header_left">
+        <a href="/">CV Álvaro Santamaría Herrero</a>
+    </div>
+    <div id="header_right">
+        {% if user.is_authenticated  %}
+            <span style="font-weight:bold;">{{user.username}}</span>
+            <span>:</span>
+            {% if user.is_superuser %}
+                <a href="/admin/" target="_blank" class="helped" data-helptext="Go to Django's admin interface.">admin</a>
+                <span>|</span>
+                <a href="/credentials/handle/" class="helped" data-helptext="Handle credentials requests.">invitations</a>
+                <span>|</span>
+            {% endif %}
+            <a href="/admin/password_change/" class="helped" data-helptext="Change password.">change password</a> 
+            <span>|</span>
+            <a href="/accounts/logout/" class ="helped" data-helptext="End session.">logout</a> 
+        {% else %}
+            <a href="/accounts/login/" class="helped" data-helptext="Click here to login or sign up!">login</a> 
+        {% endif %}
+    </div>
+</div>
+{% endblock %}
+</div>
+<div id="footer">
+{% block footer %} 
+<div class="center_block">
+    <div id="footer_menu">
+        <nav>
+            <a href="">CV (pdf)</a> |
+            <a href="">Contact</a>
+        </nav>  
+    </div>
+    <div id="footer_updated">
+        Last update: November 2012 
+    </div>
+</div>
+{% endblock %}
+</div>
+</body>
+</html>
